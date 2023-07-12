@@ -20,9 +20,14 @@ class Manager{
     }
 
     addToDoWithTitle(title){
+        if (title.trim()==='') {
+            alert('You must write something!')
+        } else{
         const newTodo = new Todo(title)
         this.addToDo(newTodo)
         console.log('caodia');
         render()
+        inputTask.value=''
+        }
     }
 }
