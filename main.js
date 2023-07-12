@@ -1,13 +1,13 @@
 // console.log(DataService.getData())
-const todos = StorageService.loadTodos();
-console.log(todos);
-let manager;
-if (todos){
-    manager = new Manager(todos);
-} else {
-    manager = new Manager();
-}
-
+// const todos = StorageService.loadTodos();
+// console.log(todos);
+// let manager;
+// if (todos){
+//     manager = new Manager(todos);
+// } else {
+//     manager = new Manager();
+// }
+let manager = new Manager();
 
 function render(){
     const todoContainer = document.getElementById('todo-container')
@@ -41,8 +41,8 @@ function render(){
         const completeBtn = document.createElement('button')
         const completeNode = document.createTextNode(todo.isCompleted? 'ACTUALLY I GUESS IT IS NOT DONE' : 'DONE')
         completeBtn.addEventListener('click', ()=> {
-            todo.isCompleted = !todo.isCompleted;
-            StorageService.saveData(manager.todosArray)
+            manager.changeCompleteStatus(index);
+            // StorageService.saveData(manager.todosArray)
             render()
         })
 
@@ -54,7 +54,7 @@ function render(){
 
         deleteButton.addEventListener('click', ()=> {
         manager.deleteTodo(index);
-        StorageService.saveData(manager.todosArray)
+        // StorageService.saveData(manager.todosArray)
         render()
         } );
 

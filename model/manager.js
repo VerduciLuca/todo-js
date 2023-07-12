@@ -1,7 +1,17 @@
 class Manager{
-    constructor(todosArray=[]){
-        this.todosArray=todosArray;
+    constructor(todosArray){
+        if(!todosArray){
+            const todosArray=StorageService.loadTodos();
+            if (todosArray){
+            this.todosArray=todosArray;
+        } 
+        else{
+            this.todosArray=[]
+        }} else {
+            this.todosArray = todosArray
+        }
     }
+
 
     addToDo(toDo){
         this.todosArray.push(toDo);
@@ -17,6 +27,8 @@ class Manager{
 
     deleteTodo(index){
         this.todosArray.splice(index, 1)
+        StorageService.saveData(this.todosArray)
+
     }
 
     addToDoWithTitle(title){
@@ -25,10 +37,17 @@ class Manager{
         } else{
         const newTodo = new Todo(title)
         this.addToDo(newTodo)
-        StorageService.saveData(manager.todosArray)
+        StorageService.saveData(this.todosArray)
         console.log('ciao');
         render()
         inputTask.value=''
         }
+    }
+
+    changeCompleteStatus(index){
+        const todo =this.todosArray[index];
+        todo.isCompleted = !todo.isCompleted
+        StorageService.saveData(this.todosArray)
+
     }
 }
