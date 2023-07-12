@@ -25,7 +25,8 @@ class Manager{
         } else{
         const newTodo = new Todo(title)
         this.addToDo(newTodo)
-        console.log('caodia');
+        StorageService.saveData(manager.todosArray)
+        console.log('ciao');
         render()
         inputTask.value=''
         }

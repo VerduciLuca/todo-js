@@ -120,6 +120,10 @@ input{
     align-items: center;
 }
 
+input:focus{
+    outline: none;
+}
+
 .green{
     color: rgba(161, 255, 151, 0.85);
 }
