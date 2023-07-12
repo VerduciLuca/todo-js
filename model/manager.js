@@ -22,5 +22,7 @@ class Manager{
     addToDoWithTitle(title){
         const newTodo = new Todo(title)
         this.addToDo(newTodo)
+        console.log('caodia');
+        render()
     }
 }

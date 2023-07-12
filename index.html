@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img class="logo" src="./assets/todologo.png" alt="todologo">
+        <img class="logo" src="./assets/Nuovo progetto.jpg" alt="todologo">
     </header>
     
     <main>
@@ -19,10 +22,14 @@
         <div id="todo-container"></div>
     </main>
     <footer>
-        <input type="text">
-        <button onclick="addToDoWithTitle()" id="inputTask">Add task</button>
+        <input type="text" id="inputTask">
+        <button onclick="manager.addToDoWithTitle(inputTask.value)" >Add task</button>
 
     </footer>
+    <div class="infodiv">
+        <p>Enter the desired task to add it to the list, completed ones will show a <p class="green">&nbsp; green&nbsp;</p> aura, uncompleted ones will have a <p class="red"> &nbsp;red&nbsp;</p> one
+        </p>
+    </div>
 
 </body>
 <script src="./model/todo.js"></script>
