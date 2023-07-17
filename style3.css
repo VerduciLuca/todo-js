@@ -60,7 +60,7 @@ button {
     border-radius: 12px;
     height: 40px;
     width: 150px;
-    -webkit-box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.56); 
+    /* -webkit-box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.56);  */
     box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.56);
     text-shadow: 3px black;
     transition: all 0.3s ease-in-out;
@@ -73,7 +73,7 @@ button:hover {
 }
 
 .todo-completed {
-    -webkit-box-shadow: 0px 8px 26px -6px rgba(161, 255, 151, 0.85);
+    /* -webkit-box-shadow: 0px 8px 26px -6px rgba(161, 255, 151, 0.85); */
     box-shadow: 0px 8px 26px -6px rgba(131, 255, 143, 0.85);
 }
 
@@ -81,12 +81,12 @@ strong {
     font-weight: 500;
 }
 
-span {
+/* span {
     display: flex;
     font-weight: 400;
     font-style: italic;
     width: fit-content;
-}
+} */
 
 .button-div{
     display: flex;
