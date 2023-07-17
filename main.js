@@ -9,6 +9,11 @@
 // }
 let manager = new Manager();
 
+DBService.getAllTodos().then(todos => {
+    manager = new Manager (todos);
+    render()
+})
+
 function render(){
     const todoContainer = document.getElementById('todo-container')
     todoContainer.innerHTML=''
@@ -53,9 +58,13 @@ function render(){
         const deleteNode = document.createTextNode('DELETE');
 
         deleteButton.addEventListener('click', ()=> {
-        manager.deleteTodo(index);
-        // StorageService.saveData(manager.todosArray)
-        render()
+            DBService.deleteTodo(todo.id).then(() =>{
+                manager.deleteTodo(index);
+                // StorageService.saveData(manager.todosArray)
+                render()
+            
+            })
+    
         } );
 
         deleteButton.appendChild(deleteNode);
@@ -68,7 +77,7 @@ function render(){
     }
 }
 
-render();
+
 
 // function render2() {
 

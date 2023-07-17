@@ -1,15 +1,18 @@
 class Manager{
-    constructor(todosArray){
-        if(!todosArray){
-            const todosArray=StorageService.loadTodos();
-            if (todosArray){
-            this.todosArray=todosArray;
-        } 
-        else{
-            this.todosArray=[]
-        }} else {
-            this.todosArray = todosArray
-        }
+    constructor(todosArray=[]){
+    //     if(!todosArray){
+    //         const todosArray=StorageService.loadTodos();
+    //         if (todosArray){
+    //         this.todosArray=todosArray;
+    //     } 
+    //     else{
+    //         this.todosArray=[]
+    //     }
+        
+    // } else {
+    //         this.todosArray = todosArray
+    //     }
+    this.todosArray=todosArray
     }
 
 
@@ -26,8 +29,9 @@ class Manager{
     }
 
     deleteTodo(index){
+
         this.todosArray.splice(index, 1)
-        StorageService.saveData(this.todosArray)
+        // StorageService.saveData(this.todosArray)
 
     }
 
@@ -37,7 +41,7 @@ class Manager{
         } else{
         const newTodo = new Todo(title)
         this.addToDo(newTodo)
-        StorageService.saveData(this.todosArray)
+        // StorageService.saveData(this.todosArray)
         console.log('ciao');
         render()
         inputTask.value=''
@@ -47,7 +51,7 @@ class Manager{
     changeCompleteStatus(index){
         const todo =this.todosArray[index];
         todo.isCompleted = !todo.isCompleted
-        StorageService.saveData(this.todosArray)
+        // StorageService.saveData(this.todosArray)
 
     }
 }
