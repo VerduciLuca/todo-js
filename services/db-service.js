@@ -15,10 +15,21 @@ class DBService{
         return tempArray;
     }
 
+    //DELETE
     static deleteTodo(id){
 
         console.log('delete',id);
         const deleteUrl = 'https://64b512c3f3dbab5a95c6a4a9.mockapi.io/todos/'+ id
         return fetch(deleteUrl, {method: 'delete'}).then(resp => resp.json())
+    }
+
+    //PUT
+    static updateTodo(todo){
+        
+    }
+
+    //UPDATE
+    static saveTodo(todo){
+
     }
 }
